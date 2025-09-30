@@ -14,12 +14,27 @@
   "type": "module",
   "main": "src/index.js",
   "scripts": {
-    "lint": "npx eslint ."
+    "lint": "npx eslint .",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.js": "npm run lint"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@eslint/js": "^9.36.0",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.36.0",
     "eslint-plugin-sonarjs": "^3.0.5",
-    "globals": "^16.4.0"
+    "globals": "^16.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.3"
   }
 }
