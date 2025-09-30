@@ -1,0 +1,18 @@
+{
+  "name": "task-manager-express",
+  "version": "0.0.0",
+  "description": "A simple and efficient task manager application to create, organize, and track tasks with ease.",
+  "homepage": "https://github.com/bruno-1/task-manager-express#readme",
+  "bugs": {
+    "url": "https://github.com/bruno-1/task-manager-express/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bruno-1/task-manager-express.git"
+  },
+  "author": "Bruno Serafini",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+  }
+}
