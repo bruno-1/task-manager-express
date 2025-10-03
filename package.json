@@ -15,11 +15,12 @@
   "main": "src/index.js",
   "scripts": {
     "lint": "npx eslint .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "commit": "cz"
   },
   "lint-staged": {
     "*.js": "npm run lint",
-    "**/*": "prettier --write --ignore-unknow"
+    "**/*": "prettier --write . --ignore-unknow"
   },
   "config": {
     "commitizen": {
