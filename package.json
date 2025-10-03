@@ -16,11 +16,13 @@
   "scripts": {
     "lint": "npx eslint .",
     "prepare": "husky",
-    "commit": "cz"
+    "commit": "cz",
+    "start:dev": "node --env-file=.env --watch src/index.js",
+    "start": "node --env-file=.env src/index.js"
   },
   "lint-staged": {
     "*.js": "npm run lint",
-    "**/*": "prettier --write . --ignore-unknow"
+    "*.{js,json,md}": "prettier --write --ignore-unknown"
   },
   "config": {
     "commitizen": {
@@ -40,5 +42,9 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.3",
     "prettier": "3.6.2"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "helmet": "^8.1.0"
   }
 }
