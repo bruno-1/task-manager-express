@@ -18,7 +18,8 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.js": "npm run lint"
+    "*.js": "npm run lint",
+    "**/*": "prettier --write --ignore-unknow"
   },
   "config": {
     "commitizen": {
@@ -32,9 +33,11 @@
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-sonarjs": "^3.0.5",
     "globals": "^16.4.0",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.3"
+    "lint-staged": "^16.2.3",
+    "prettier": "3.6.2"
   }
 }
