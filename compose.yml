@@ -1,0 +1,13 @@
+services:
+  api:
+    container_name: task-manager-backend
+    build: .
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    env_file:
+      - .env
+    restart: unless-stopped
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    command: npm run start:dev

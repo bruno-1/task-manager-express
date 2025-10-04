@@ -1,0 +1,11 @@
+node_modules
+.git
+.husky
+.gitignore
+.prettierignore
+.prettierrc
+.commitlint.config.js
+.eslint.config.js
+.env*
+.vscode
+README.md
