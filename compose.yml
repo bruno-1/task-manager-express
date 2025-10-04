@@ -9,5 +9,32 @@ services:
     restart: unless-stopped
     volumes:
       - .:/usr/src/app
-      - /usr/src/app/node_modules
+      - node_modules:/usr/src/app/node_modules
     command: npm run start:dev
+    networks:
+      - app-network
+
+  db:
+    container_name: task-manager-db
+    image: postgres:18
+    restart: always
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_HOST_AUTH_METHOD: scram-sha-256
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    networks:
+      - app-network
+
+volumes:
+  db_data:
+  node_modules:
+
+networks:
+  app-network:
