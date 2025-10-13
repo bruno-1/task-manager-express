@@ -18,7 +18,8 @@
     "prepare": "husky",
     "commit": "cz",
     "start:dev": "node --env-file=.env --watch src/index.js",
-    "start": "node --env-file=.env src/index.js"
+    "start": "node --env-file=.env src/index.js",
+    "test": "node --env-file=.env.test --experimental-vm-modules node_modules/jest/bin/jest.js --detectOpenHandles"
   },
   "lint-staged": {
     "*.js": "npm run lint",
@@ -40,6 +41,7 @@
     "eslint-plugin-sonarjs": "^3.0.5",
     "globals": "^16.4.0",
     "husky": "^9.1.7",
+    "jest": "^30.2.0",
     "lint-staged": "^16.2.3",
     "prettier": "3.6.2"
   },
