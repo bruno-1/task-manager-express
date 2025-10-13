@@ -1,6 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
 import { TaskStatus } from '../constants/index.js';
-import Database from '../config/database';
+import Database from '../config/database.js';
 
 class TaskModel extends Model {}
 
