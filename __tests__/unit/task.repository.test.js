@@ -3,6 +3,7 @@ import { TaskRepository } from '../../src/repositories/index.js';
 
 const mockTaskModel = {
   findAll: jest.fn(),
+  findByPk: jest.fn(),
 };
 
 describe('TaskRepository', () => {
@@ -48,5 +49,23 @@ describe('TaskRepository', () => {
 
     expect(mockTaskModel.findAll).toHaveBeenCalledWith();
     expect(result).toEqual(tasks);
+  });
+
+  it('should find a task by id', async () => {
+    const task = {
+      id: 'b84c53e5-1ae6-4469-b6a9-b59a8342ace4',
+      title: 'Implement JWT authentication',
+      description:
+        'Create login and registration endpoints, generate JWT tokens, and protect private routes.',
+      status: 'pending',
+      createdAt: '2025-10-13T21:24:36.191Z',
+      updatedAt: '2025-10-13T21:24:36.191Z',
+    };
+    mockTaskModel.findByPk.mockResolvedValue(task);
+
+    const result = await repository.findById(task.id);
+
+    expect(mockTaskModel.findByPk).toHaveBeenCalledWith(task.id);
+    expect(result).toEqual(task);
   });
 });

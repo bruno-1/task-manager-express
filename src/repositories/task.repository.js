@@ -6,4 +6,8 @@ export class TaskRepository {
   async findAll() {
     return this.taskModel.findAll();
   }
+
+  async findById(id) {
+    return this.taskModel.findByPk(id);
+  }
 }
